@@ -25,6 +25,11 @@ class Money(simpleGE.Sprite):
         self.x = random.randint(0, self.screenWidth)
         self.y = 0
         self.dy = random.randint(3, 8)
+        self.imageAngle = random.randint(0, 180)
+        self.turnRate = random.randint(-5, 5)
+        
+    def process(self):
+        self.imageAngle += self.turnRate
         
     def checkBounds(self):
         if self.bottom > self.screenHeight:
